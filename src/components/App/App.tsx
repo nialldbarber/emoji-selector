@@ -12,6 +12,8 @@ const App = () => {
     searchRef?.current!.focus()
   }, [])
 
+  const handleRemove = () => searchRef?.current!.focus()
+
   return (
     <main>
       <H text="Emoji Selector" className="flex justify-center mt-5 text-4xl" />
@@ -20,6 +22,7 @@ const App = () => {
         search={search}
         searchFn={(e) => setSearch(e.target.value)}
         removeFn={() => setSearch('')}
+        handleRemove={handleRemove}
       />
       <EmojiList search={search} />
     </main>

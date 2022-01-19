@@ -33,7 +33,17 @@ export const updatedEmojiListWithInput = (
  * underscores, colons should be replaced
  * with a space
  */
-const formatEmojiLine = (emoji: string) => {
+// TODO: finish this!
+export const formatEmojiLine = (emoji: string) => {
   let formattedEmoji
   let firstColonIndex = emoji.split('').findIndex((char) => char === ':')
 }
+
+/**
+ * get the first item from array. which
+ * happens to be an emoji in our case
+ * (you need to use Array.from() with
+ * UTF8 strings - otherwise the char
+ * is unrecognised)
+ */
+export const getFirstItemOfString = (string: string) => Array.from(string)[0]

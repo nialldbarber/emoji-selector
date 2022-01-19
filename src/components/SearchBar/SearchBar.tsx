@@ -6,17 +6,21 @@ type SearchBarProps = {
   search: string
   searchFn: (e: any) => void
   removeFn: () => void
+  handleRemove: () => void
 }
 
 const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
-  ({ search, searchFn, removeFn }, ref) => {
+  ({ search, searchFn, removeFn, handleRemove }, ref) => {
     return (
       <div className="flex justify-center mt-10 mb-5">
         <div className="relative flex justify-center items-center w-96">
           {search.length > 0 ? (
             <CrossIcon
               className="absolute right-2 cursor-pointer"
-              onClick={removeFn}
+              onClick={() => {
+                removeFn()
+                handleRemove()
+              }}
             />
           ) : null}
           <input
