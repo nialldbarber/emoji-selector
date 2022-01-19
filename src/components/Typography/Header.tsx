@@ -1,17 +1,10 @@
-export const numberTuple = <T extends number[]>(...args: T) => args
-
-const HEADER_LIST = numberTuple(1, 2, 3, 4, 5)
-
 type HeaderProps = {
-  text?: string
-  level?: typeof HEADER_LIST[number]
+  text: string
+  className?: string
 }
 
-const Header = ({ text, level }: HeaderProps) => {
-  const H = `h${level}` as keyof JSX.IntrinsicElements
-
-  const header = <H>{text}</H>
-  return header
+const Header = ({ text, className }: HeaderProps) => {
+  return <h1 className={className}>{text}</h1>
 }
 
 export default Header

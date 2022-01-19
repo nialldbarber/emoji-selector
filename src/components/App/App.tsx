@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { EmojiList } from 'src/components/EmojiList'
 import { SearchBar } from 'src/components/SearchBar'
+import { H } from 'src/components/Typography'
 
 const App = () => {
   const [search, setSearch] = useState('')
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <main>
+      <H text="Emoji Selector" className="flex justify-center mt-5 text-4xl" />
       <SearchBar
         ref={searchRef}
         search={search}

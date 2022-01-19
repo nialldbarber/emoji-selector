@@ -20,3 +20,20 @@ export const updatedEmojiListWithInput = (
     return emoji.toLowerCase().includes(searchedWord.toLowerCase())
   })
 }
+
+/**
+ * take an unformatted line from an
+ * emoji list, and return something
+ * more readable
+ * 😀:grinning, face, smile, happy, joy, :D, grin
+ * becomes
+ * 😀 Grinning Face Smile Happy Joy :D Grin
+ *
+ * Regex:
+ * underscores, colons should be replaced
+ * with a space
+ */
+const formatEmojiLine = (emoji: string) => {
+  let formattedEmoji
+  let firstColonIndex = emoji.split('').findIndex((char) => char === ':')
+}
