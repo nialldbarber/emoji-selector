@@ -9,6 +9,9 @@ import {
   updatedEmojiListWithInput,
 } from 'src/libs/format-emojis'
 
+import DownIcon from '../Icons/Down'
+import UpIcon from '../Icons/Up'
+
 type EmojiListProps = {
   search: string
 }
@@ -29,18 +32,22 @@ const EmojiList = ({ search }: EmojiListProps) => {
   return (
     <div className="flex items-center justify-center">
       <List
-        height={height - 165}
+        height={height - 200}
+        width={width - 100}
         itemCount={updatedEmojiList.length}
         itemSize={70}
-        width={width - 100}
         // @ts-ignore
         itemData={updatedEmojiList}
         ref={listRef}
       >
         {EmojiItem}
       </List>
-      <button onClick={scrollToTop}>Go to top</button>
-      <button onClick={scrollToBottom}>Go to bottom</button>
+      <div className="fixed top-20 right-5 cursor-pointer">
+        <UpIcon onClick={scrollToTop} />
+      </div>
+      <div className="fixed bottom-20 right-5 cursor-pointer">
+        <DownIcon onClick={scrollToBottom} />
+      </div>
     </div>
   )
 }
