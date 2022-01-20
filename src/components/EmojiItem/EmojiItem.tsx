@@ -1,5 +1,8 @@
+import { useContext } from 'react'
+
+import { ToastContext } from 'src/context'
 import useCopyToClipboard from 'src/hooks/useCopyToClipboard'
-import { getFirstItemOfString } from 'src/libs/format-emojis'
+import { formatEmojiLine } from 'src/libs/format-emojis'
 
 type EmojiItemProps = {
   data: string
@@ -8,13 +11,22 @@ type EmojiItemProps = {
 }
 
 const EmojiItem = ({ data, index, style }: EmojiItemProps) => {
-  const [value, copy] = useCopyToClipboard()
-  const emoji = getFirstItemOfString(data[index])
+  const { updatedToast } = useContext(ToastContext)
+  const [_, copy] = useCopyToClipboard()
+  let { emoji, info } = formatEmojiLine(data[index])
+
+  const copyToClipBoard = () => {
+    copy(emoji)
+    updatedToast && updatedToast(emoji)
+  }
 
   return (
     <div style={style}>
-      <div style={{ padding: '1rem' }}>
-        <p onClick={() => copy(emoji)}>{data[index]}</p>
+      <div className="p-1 cursor-pointer">
+        <p className="flex items-center" onClick={copyToClipBoard}>
+          <span className="text-4xl">{emoji}</span>
+          <span className="block pl-3">{info}</span>
+        </p>
       </div>
     </div>
   )

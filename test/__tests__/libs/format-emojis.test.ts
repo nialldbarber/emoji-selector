@@ -48,7 +48,7 @@ describe('libs -> format-emojis', () => {
       expect(getFirstItemOfString('this is a string')).toBe('t')
     })
 
-    test('it should return the first emoji of a string and not return an unfound icon', () => {
+    test('it should return the first emoji of a string and not return an unrecognised icon', () => {
       expect(getFirstItemOfString('😬:grimacing, face, grimace, teeth')).toBe(
         '😬'
       )

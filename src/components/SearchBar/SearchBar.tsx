@@ -29,6 +29,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
             type="text"
             value={search}
             onChange={searchFn}
+            placeholder="Start typing..."
           />
         </div>
       </div>

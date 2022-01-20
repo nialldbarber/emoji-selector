@@ -37,10 +37,14 @@ export const updatedEmojiListWithInput = (
  * underscores, colons should be replaced
  * with a space
  */
-// TODO: finish this!
 export const formatEmojiLine = (emoji: string) => {
-  let formattedEmoji
-  let firstColonIndex = emoji.split('').findIndex((char) => char === ':')
+  let emojiIcon = emoji
+  let emojiInfo = emoji
+  // replace underscores with space
+  emojiInfo = emojiInfo.replace(/_/g, ' ').replace(/^[^:]+:\s*/, '')
+  // get emoji icon
+  emojiIcon = emojiIcon.replace(/:(.*)/, '')
+  return { emoji: emojiIcon, info: emojiInfo }
 }
 
 /**
