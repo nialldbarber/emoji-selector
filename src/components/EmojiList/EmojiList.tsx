@@ -2,15 +2,14 @@ import { useMemo, useRef, useState } from 'react'
 
 import { FixedSizeList as List } from 'react-window'
 import { EmojiItem } from 'src/components/EmojiItem'
+import DownIcon from 'src/components/Icons/Down'
+import UpIcon from 'src/components/Icons/Up'
 import { emojis as emojiList } from 'src/constants/emojis'
 import useWindowSize from 'src/hooks/useWindowSize'
 import {
   formatEmojisIntoArray,
   updatedEmojiListWithInput,
 } from 'src/libs/format-emojis'
-
-import DownIcon from '../Icons/Down'
-import UpIcon from '../Icons/Up'
 
 type EmojiListProps = {
   search: string
