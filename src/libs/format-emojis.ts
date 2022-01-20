@@ -50,4 +50,4 @@ export const formatEmojiLine = (emoji: string) => {
  * UTF8 strings - otherwise the char
  * is unrecognised)
  */
-export const getFirstItemOfString = (string: string) => Array.from(string)[0]
+export const getFirstItemOfString = (str: string) => Array.from(str)[0]

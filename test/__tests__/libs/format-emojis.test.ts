@@ -1,5 +1,6 @@
 import {
   formatEmojisIntoArray,
+  getFirstItemOfString,
   updatedEmojiListWithInput,
 } from 'src/libs/format-emojis'
 import { input, output } from 'test/__mocks__/dummy-data'
@@ -33,6 +34,24 @@ describe('libs -> format-emojis', () => {
 
     test('it should return full, original array if no search term is provided', () => {
       expect(updatedEmojiListWithInput(output, '')).toStrictEqual(output)
+    })
+
+    test("it should return any empty array if search term doesn't match", () => {
+      expect(
+        updatedEmojiListWithInput(output, 'existential-dread')
+      ).toStrictEqual([])
+    })
+  })
+
+  describe('getFirstItemOfString()', () => {
+    test('it should return the first item of a string', () => {
+      expect(getFirstItemOfString('this is a string')).toBe('t')
+    })
+
+    test('it should return the first emoji of a string and not return an unfound icon', () => {
+      expect(getFirstItemOfString('😬:grimacing, face, grimace, teeth')).toBe(
+        '😬'
+      )
     })
   })
 })
