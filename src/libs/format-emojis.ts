@@ -3,7 +3,11 @@
  * an array split by new line
  */
 export const formatEmojisIntoArray = (emojis: string): string[] => {
-  let formattedEmojis = emojis.split('\n')
+  let emojisToFormat = emojis
+  if (typeof emojis !== 'string') {
+    emojisToFormat = emojisToFormat.toString()
+  }
+  let formattedEmojis = emojisToFormat.split('\n')
   return formattedEmojis
 }
 
