@@ -4,4 +4,4 @@ This was inspired by [H. Ryan Jones'](https://github.com/hryanjones) awesome [em
 
 [Check it out here!](https://emoji-selector.vercel.app/)
 
-![Example](https://media.giphy.com/media/yU4Fk9urfoGoVFF1kU/giphy.mp4)
+![Example](https://media.giphy.com/media/yU4Fk9urfoGoVFF1kU/giphy.gif)
